@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.9 on win32)" generated="20220513 12:38:41.812" rpa="true" schemaversion="3">
+<suite id="s1" name="Email2" source="C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot">
+<test id="s1-t1" name="Sending email" line="15">
+<kw name="Authorize">
+<arg>account=${GMAIL_ACCOUNT} and password=${GMAIL_PASSWORD}</arg>
+<msg timestamp="20220513 12:38:41.835" level="FAIL">No keyword with name 'Authorize' found.</msg>
+<status status="FAIL" starttime="20220513 12:38:41.835" endtime="20220513 12:38:41.835"/>
+</kw>
+<kw name="Send Message">
+<arg>sender=${GMAIL_ACCOUNT}</arg>
+<arg>recipients=${RECIPIENT_ADDRESS}</arg>
+<arg>subject=Message from RPA Robot</arg>
+<arg>body=RPA Robot message body</arg>
+<status status="NOT RUN" starttime="20220513 12:38:41.836" endtime="20220513 12:38:41.836"/>
+</kw>
+<status status="FAIL" starttime="20220513 12:38:41.833" endtime="20220513 12:38:41.837">No keyword with name 'Authorize' found.</status>
+</test>
+<test id="s1-t2" name="Sending HTML Email With Image" line="22">
+<kw name="Send Message">
+<arg>sender=${GMAIL_ACCOUNT}</arg>
+<arg>recipients=${RECIPIENT_ADDRESS}</arg>
+<arg>subject=HTML email with body images (2) plus one attachment</arg>
+<arg>body=${EMAIL_BODY}</arg>
+<arg>html=${TRUE}</arg>
+<arg>images=${BODY_IMG1}, ${BODY_IMG2}</arg>
+<arg>attachments=example.png</arg>
+<msg timestamp="20220513 12:38:41.839" level="FAIL">No keyword with name 'Send Message' found.</msg>
+<status status="FAIL" starttime="20220513 12:38:41.839" endtime="20220513 12:38:41.839"/>
+</kw>
+<doc>Sending email with HTML content and attachment</doc>
+<status status="FAIL" starttime="20220513 12:38:41.837" endtime="20220513 12:38:41.839">No keyword with name 'Send Message' found.</status>
+</test>
+<status status="FAIL" starttime="20220513 12:38:41.814" endtime="20220513 12:38:41.840"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Email2">Email2</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220513 12:38:41.829" level="ERROR">Error in file 'C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot' on line 2: Importing library 'RPA.Email.ImapSmtp' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\ett19810\PycharmProjects\Test_01\venv\Scripts\robot.exe
+  C:\Users\ett19810\AppData\Local\Programs\Python\Python310
+  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32\python37.zip
+  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32\DLLs
+  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32\lib
+  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32
+  C:\Users\ett19810\PycharmProjects\Test_01\venv
+  C:\Users\ett19810\PycharmProjects\Test_01\venv\lib\site-packages</msg>
+<msg timestamp="20220513 12:38:41.831" level="ERROR">Error in file 'C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot' on line 9: Setting variable '${BODY_IMG1}' failed: Variable '${IMAGEDIR}' not found.</msg>
+<msg timestamp="20220513 12:38:41.832" level="ERROR">Error in file 'C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot' on line 10: Setting variable '${BODY_IMG2}' failed: Variable '${IMAGEDIR}' not found.</msg>
+</errors>
+</robot>
