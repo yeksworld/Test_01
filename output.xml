@@ -1,62 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.7.9 on win32)" generated="20220513 12:38:41.812" rpa="true" schemaversion="3">
-<suite id="s1" name="Email2" source="C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot">
-<test id="s1-t1" name="Sending email" line="15">
-<kw name="Authorize">
-<arg>account=${GMAIL_ACCOUNT} and password=${GMAIL_PASSWORD}</arg>
-<msg timestamp="20220513 12:38:41.835" level="FAIL">No keyword with name 'Authorize' found.</msg>
-<status status="FAIL" starttime="20220513 12:38:41.835" endtime="20220513 12:38:41.835"/>
+<robot generator="Robot 5.0 (Python 3.7.9 on win32)" generated="20220518 10:11:00.931" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Test.robot">
+<test id="s1-t1" name="Open Main Page" line="8">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220518 10:11:01.078" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20220518 10:11:01.078" endtime="20220518 10:11:03.770"/>
 </kw>
-<kw name="Send Message">
-<arg>sender=${GMAIL_ACCOUNT}</arg>
-<arg>recipients=${RECIPIENT_ADDRESS}</arg>
-<arg>subject=Message from RPA Robot</arg>
-<arg>body=RPA Robot message body</arg>
-<status status="NOT RUN" starttime="20220513 12:38:41.836" endtime="20220513 12:38:41.836"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220518 10:11:03.771" endtime="20220518 10:11:03.881"/>
 </kw>
-<status status="FAIL" starttime="20220513 12:38:41.833" endtime="20220513 12:38:41.837">No keyword with name 'Authorize' found.</status>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://button[@id='L2AGLb']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220518 10:11:03.881" level="INFO">Clicking button 'xpath://button[@id='L2AGLb']'.</msg>
+<status status="PASS" starttime="20220518 10:11:03.881" endtime="20220518 10:11:03.923"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@class='gLFyf gsfi']</arg>
+<arg>Best restaurant in lahti</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220518 10:11:03.924" level="INFO">Typing text 'Best restaurant in lahti' into text field 'xpath://input[@class='gLFyf gsfi']'.</msg>
+<status status="PASS" starttime="20220518 10:11:03.924" endtime="20220518 10:11:03.980"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>xpath://input[@class='gLFyf gsfi']</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220518 10:11:03.981" level="INFO">Sending key(s) ('ENTER',) to xpath://input[@class='gLFyf gsfi'] element.</msg>
+<msg timestamp="20220518 10:11:04.259" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220518 10:11:04.259" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220518 10:11:03.980" endtime="20220518 10:11:05.744"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text1}</var>
+<arg>xpath:(//div[@class='dbg0pd'])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220518 10:11:05.766" level="INFO">${text1} = Viikinkiravintola Harald</msg>
+<status status="PASS" starttime="20220518 10:11:05.744" endtime="20220518 10:11:05.766"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text2}</var>
+<arg>xpath:(//div[@class='dbg0pd'])[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220518 10:11:05.790" level="INFO">${text2} = Bistro Popot</msg>
+<status status="PASS" starttime="20220518 10:11:05.767" endtime="20220518 10:11:05.790"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text3}</var>
+<arg>xpath:(//div[@class='dbg0pd'])[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220518 10:11:05.805" level="INFO">${text3} = Nepalilainen ravintola Sagun</msg>
+<status status="PASS" starttime="20220518 10:11:05.790" endtime="20220518 10:11:05.805"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220518 10:11:05.805" endtime="20220518 10:11:05.806"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220518 10:11:05.806" endtime="20220518 10:11:05.806"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text3}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220518 10:11:05.806" endtime="20220518 10:11:05.807"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:(//div[@class='dbg0pd'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220518 10:11:05.807" level="INFO">Clicking element 'xpath:(//div[@class='dbg0pd'])[1]'.</msg>
+<status status="PASS" starttime="20220518 10:11:05.807" endtime="20220518 10:11:07.228"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220518 10:11:07.229" endtime="20220518 10:11:09.337"/>
+</kw>
+<status status="PASS" starttime="20220518 10:11:01.078" endtime="20220518 10:11:09.337"/>
 </test>
-<test id="s1-t2" name="Sending HTML Email With Image" line="22">
-<kw name="Send Message">
-<arg>sender=${GMAIL_ACCOUNT}</arg>
-<arg>recipients=${RECIPIENT_ADDRESS}</arg>
-<arg>subject=HTML email with body images (2) plus one attachment</arg>
-<arg>body=${EMAIL_BODY}</arg>
-<arg>html=${TRUE}</arg>
-<arg>images=${BODY_IMG1}, ${BODY_IMG2}</arg>
-<arg>attachments=example.png</arg>
-<msg timestamp="20220513 12:38:41.839" level="FAIL">No keyword with name 'Send Message' found.</msg>
-<status status="FAIL" starttime="20220513 12:38:41.839" endtime="20220513 12:38:41.839"/>
-</kw>
-<doc>Sending email with HTML content and attachment</doc>
-<status status="FAIL" starttime="20220513 12:38:41.837" endtime="20220513 12:38:41.839">No keyword with name 'Send Message' found.</status>
-</test>
-<status status="FAIL" starttime="20220513 12:38:41.814" endtime="20220513 12:38:41.840"/>
+<status status="PASS" starttime="20220518 10:11:00.931" endtime="20220518 10:11:09.337"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tasks</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Email2">Email2</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220513 12:38:41.829" level="ERROR">Error in file 'C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot' on line 2: Importing library 'RPA.Email.ImapSmtp' failed: ModuleNotFoundError: No module named 'RPA'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\ett19810\PycharmProjects\Test_01\venv\Scripts\robot.exe
-  C:\Users\ett19810\AppData\Local\Programs\Python\Python310
-  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32\python37.zip
-  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32\DLLs
-  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32\lib
-  C:\Users\ett19810\AppData\Local\Programs\Python\Python37-32
-  C:\Users\ett19810\PycharmProjects\Test_01\venv
-  C:\Users\ett19810\PycharmProjects\Test_01\venv\lib\site-packages</msg>
-<msg timestamp="20220513 12:38:41.831" level="ERROR">Error in file 'C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot' on line 9: Setting variable '${BODY_IMG1}' failed: Variable '${IMAGEDIR}' not found.</msg>
-<msg timestamp="20220513 12:38:41.832" level="ERROR">Error in file 'C:\Users\ett19810\PycharmProjects\Test_01\Robot_Test\Email2.robot' on line 10: Setting variable '${BODY_IMG2}' failed: Variable '${IMAGEDIR}' not found.</msg>
 </errors>
 </robot>
