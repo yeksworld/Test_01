@@ -18,11 +18,3 @@ Open Main Page
     log to console  ${text2}
     log to console  ${text3}
     close all browsers
-Lounas
-    open browser    ${url}     ${browser}
-    maximize browser window
-    click button  xpath://button[@id='L2AGLb']
-    input text  xpath://input[@class='gLFyf gsfi']  Best restaurant in lahti
-    press keys  xpath://input[@class='gLFyf gsfi']  ENTER
-    click element       xpath:(//div[@class='dbg0pd'])[1]
-    click element       xpath:(//a[@class='xFAlBc'])[1]
