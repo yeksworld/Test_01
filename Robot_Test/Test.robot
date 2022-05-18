@@ -17,7 +17,4 @@ Open Main Page
     log to console  ${text1}
     log to console  ${text2}
     log to console  ${text3}
-    click element      xpath:(//div[@class='dbg0pd'])[1]
-    #Scroll Element Into View    xpath://span[@class='q8U8x']
     close all browsers
-    #close driver
